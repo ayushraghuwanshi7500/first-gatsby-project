@@ -6,8 +6,22 @@
 
 module.exports = {
   /* Your site config here */
+  siteMetadata: {
+    title: "first-gatsby-project!",
+    author: "Ayush Raghuwanshi!",
+  },
   flags: {
     DEV_SSR: true,
   },
-  plugins: ["gatsby-plugin-sass"],
+  plugins: [
+    "gatsby-plugin-sass",
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `src`,
+        path: `${__dirname}/src/`,
+      },
+    },
+    "gatsby-transformer-remark",
+  ],
 }
